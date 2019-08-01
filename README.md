@@ -17,19 +17,19 @@
 3. Create a new project:
     ```sh
     $ cp .env.example .env
-    $ vim .env
+    $ atom .env
     ```
 4. Install WP:
     ```sh
-    $ wp core install --url='https://site-template:8890' --title='Template' --admin_user='mediengestalter' --admin_password='enter' --admin_email='admin@moritz-graf.de'
+    $ wp core install --prompt=url --prompt=title --admin_user='mediengestalter' --prompt=admin_password --admin_email='admin@moritz-graf.de' --skip-email
     ```
-3. Add theme(s) in `web/app/themes/` as you would for a normal WordPress site
-4. Set the document root on your webserver to Bedrock's `web` folder: `/path/to/site/web/`
-5. Access WordPress admin at `https://example.com/wp/wp-admin/`
+5. Add theme(s) in `web/app/themes/` as you would for a normal WordPress site
+6. Set the document root on your webserver to Bedrock's `web` folder: `/path/to/site/web/`
 
 ## Documentation
 
 Bedrock documentation is available at [https://roots.io/bedrock/docs/](https://roots.io/bedrock/docs/).
+Good Guide is available at [https://css-tricks.com/intro-bedrock-wordpress/](https://css-tricks.com/intro-bedrock-wordpress/).
 
 ## Contributing
 
