@@ -22,9 +22,25 @@
 4. Install WP:
     ```sh
     $ wp core install --prompt=url --prompt=title --admin_user='mediengestalter' --prompt=admin_password --admin_email='admin@moritz-graf.de' --skip-email
+    $ wp site switch-language de_DE
+    $ wp option update blogdescription ''
+    $ wp option update ping_sites '' && wp option update default_pingback_flag false && wp option update default_pingback_flag false && wp option update default_ping_status false && wp option update default_comment_status false && wp option update show_avatars false && wp rewrite structure '/%postname%/'
     ```
 5. Add theme(s) in `web/app/themes/` as you would for a normal WordPress site
 6. Set the document root on your webserver to Bedrock's `web` folder: `/path/to/site/web/`
+
+### Updates
+
+To update Wordpress:
+    ```sh
+    $ composer require johnpbloch/wordpress 5.2.x
+    $ wp core update-db
+    ```
+
+Update Plugins:
+    ```sh
+    $ composer update
+    ```
 
 ## Documentation
 

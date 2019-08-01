@@ -34,6 +34,10 @@
     {
       "type": "composer",
       "url": "https://pivvenit.github.io/acf-composer-bridge/composer/v2/wordpress-plugin/"
+    },
+    {
+      "type": "composer",
+      "url": "https://wp-languages.github.io"
     }
   ],
   "require": {
@@ -42,6 +46,7 @@
     "vlucas/phpdotenv": "^3.4.0",
     "oscarotero/env": "^1.2.0",
     "roots/wordpress": "5.2.2",
+    "koodimonni-language/core-de_de": "*",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/wp-scss": "^1.2",
@@ -74,7 +79,12 @@
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
-    "wordpress-install-dir": "web/wp"
+    "wordpress-install-dir": "web/wp",
+    "dropin-paths": {
+        "web/app/languages/": ["vendor:koodimonni-language"],
+        "web/app/languages/plugins/": ["vendor:koodimonni-plugin-language"],
+        "web/app/languages/themes/": ["vendor:koodimonni-theme-language"]
+      }
   },
   "scripts": {
     "post-root-package-install": [
