@@ -50,3 +50,16 @@ Keep track of development and community news.
 * Read and subscribe to the [Roots Blog](https://roots.io/blog/)
 * Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
 * Listen to the [Roots Radio podcast](https://roots.io/podcast/)
+
+
+## ToDo
+
+* How to define the different .env files? Is it .env.local,...?
+* [Disable Gutenberg by Code](https://digwp.com/2018/12/enable-gutenberg-block-editor/)
+* Write own file-renaming-on-upload Plugin
+* Add other Plugins too?
+  * Better Search Replace
+  * Code Snippets
+  * Duplicator
+  * Mail project
+  * Relevanssi
