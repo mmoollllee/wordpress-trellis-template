@@ -1,0 +1,72 @@
+#header {
+  z-index: 2
+}
+
+#navbar.position-sticky {
+	top: 1.5rem;
+	height: 0;
+	padding-top: 0;
+	z-index: 100;
+	position: relative;
+}
+
+#menu-hauptmenue, #menu-hauptmenue-1 {
+	list-style: none;
+	a {
+		padding: .5rem;
+		text-transform: uppercase; 
+	}
+}
+
+#menu-hauptmenue-1 a, {
+	text-decoration: none;
+	display: block;
+	font-weight: 600;
+}
+
+#wrapper {
+	position: relative;
+	z-index: 1;
+	background: #fff;
+	overflow: hidden
+}
+
+#responsivemenu {
+	padding: 4rem 2rem;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 260px;
+	min-height: 100vh;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	z-index: 0;
+	display: none;
+	ul {
+		list-style: none;
+		padding-left: 0;
+		li {
+			padding-top: .2em;
+			padding-bottom: .2em;
+		}
+	}
+}
+
+#navtoggle {position: absolute; top: 1em; right: 1em;}
+
+.sub-menu { padding-right: .5em; padding-bottom: .5em }
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+ overflow:hidden
+}
+.slideout-open #wrapper > * { opacity:0.5}
+.slideout-open #navtoggle:before {
+ content:"P"
+}
+.slideout-open .slideout-menu {
+ display:block !important
+}

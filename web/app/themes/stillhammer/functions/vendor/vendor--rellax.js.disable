@@ -1,0 +1,3 @@
+window.onload = function() {
+  var rellax = jQuery('[data-rellax-speed]').length ? new Rellax('[data-rellax-speed]', { center: true}) : '';
+}

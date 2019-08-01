@@ -1,0 +1,20 @@
+.breadcrumb-trail {
+	flex-basis: 100%;
+	max-width: 100%;
+	font-size: 0.85rem;
+	padding: 0 15px;
+
+	.trail-items {
+		padding: 0;
+		
+		a {
+			font-weight: 400;
+		}
+	}
+}
+
+.breadcrumb-trail ul li:before {content: none;}
+li.trail-item {display: inline-block;}
+li.trail-item.trail-end:after {content: none;}
+li.trail-item:after { font-family: "pernes" !important; font-style: normal !important; font-weight: normal !important; font-variant: normal !important; text-transform: none !important; speak: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; position: relative; content: "\69"; bottom: -0.2em; left: 0.1em; padding-right: .3em; }
+li.trail-begin {display: none}

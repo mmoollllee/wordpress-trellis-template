@@ -1,0 +1,12 @@
+.cc-window {
+	padding: 1.5em 1.5em .5em !important; font-size: .9em !important; box-shadow: 0 0 12px -5px rgba(20, 48, 143, 0.32); -ms-flex-direction: row !important; flex-direction: row !important; 	transition: opacity 1s ease, bottom 1s ease-in !important;
+	.scrolled & {
+		bottom: -100% !important;
+	}
+}
+.cc-message {margin-bottom: .5em !important;}
+.cc-compliance { display: block !important;
+	a { 	margin-top: 0;
+	margin-bottom: 1em;
+	min-width: 80px; border: 0 none}
+}

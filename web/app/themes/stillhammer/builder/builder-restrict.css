@@ -1,0 +1,9 @@
+.layout[data-redaktionell="false"] { opacity: 0.5 }
+
+.layout[data-redaktionell="false"] .acf-fc-layout-controlls, .layout[data-redaktionell="false"] .acf-fields { display: none !important}
+
+.layout[data-redaktionell="false"], .mg_acf_top_title_field { pointer-events: none; }
+
+[data-name="redaktionell"], [data-name="code"], [data-name="close"], [data-name="aktiv"], [data-name="classes"], [data-name="lazyload"], [data-name="verlinken"], [data-name="imagesize"] { display: none !important}
+
+.acf-fc-layout-handle { cursor: pointer }

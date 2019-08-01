@@ -93,12 +93,15 @@ Config::define('DISABLE_WP_CRON', env('DISABLE_WP_CRON') ?: false);
 Config::define('DISALLOW_FILE_EDIT', true);
 // Disable plugin and theme updates and installation from the admin
 Config::define('DISALLOW_FILE_MODS', true);
+// Maybe no AUTOP fir WPCF7?
+// Config::define('WPCF7_AUTOP', true);
 
 /**
  * Debugging Settings
  */
 Config::define('WP_DEBUG_DISPLAY', false);
 Config::define('SCRIPT_DEBUG', false);
+Config::define('WP_SCSS_ALWAYS_RECOMPILE', false);
 ini_set('display_errors', 0);
 
 /**

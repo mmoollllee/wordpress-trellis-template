@@ -1,0 +1,36 @@
+<?php
+
+  function mg_gutenberg_setup() {
+    add_theme_support( 'align-wide' );
+  }
+add_action( 'after_setup_theme', 'mg_gutenberg_setup' );
+
+  function mg_acf_blocks() {
+    // check function exists
+    if( function_exists('acf_register_block') ) {
+
+      // register a testimonial block
+      acf_register_block(array(
+        'name'				=> 'txt-bild',
+        'title'				=> __('Text mit Bild'),
+        'description'		=> __('Text mit Bild links oder rechts'),
+        'render_callback'	=> 'mg_acf_blocks_render_callback',
+        'category'			=> 'formatting',
+        'keywords'			=> array( 'wk' ),
+          'mode'				=> 'edit',
+          'supports'			=> array(
+            'align'			=> array( 'left', 'right' ), //wide
+         ),
+        'icon'				=> '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M13 17h8v-2h-8v2zM3 19h8V5H3v14zM13 9h8V7h-8v2zm0 4h8v-2h-8v2z"></path></svg>',
+      ));
+    }
+  }
+add_action('acf/init', 'mg_acf_blocks');
+
+function mg_acf_blocks_render_callback( $block ) {
+  $slug = str_replace('acf/', '', $block['name']);
+
+  if( file_exists( get_theme_file_path("/gutenberg-blocks/content-{$slug}.php") ) ) {
+    include( get_theme_file_path("/gutenberg-blocks/content-{$slug}.php") );
+  }
+}

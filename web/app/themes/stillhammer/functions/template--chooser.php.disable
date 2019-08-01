@@ -1,0 +1,56 @@
+<?php
+
+/*
+  Funktionen um Wordpress je nach Fall das richtige Template unterzujubeln.
+  z.B. auch für die 404-Seite.
+*/
+
+function sub_or_single($template = false){
+      global $post;
+
+      if ($post->post_parent) {
+
+          // get top level parent page
+          $top_parent = get_post(reset(array_reverse(get_post_ancestors($post->ID))));
+
+          $first_parent = get_post($post->post_parent);
+
+    if ( $top_parent->ID == "458" && $top_parent->ID == $first_parent->ID ) {
+      $template = "sub";
+    } elseif ( $top_parent->ID == "458" && $top_parent->ID != $first_parent->ID ) {
+      $template = "single";
+    } else {
+      $template = false;
+    }
+      }
+      return $template;
+  }
+
+function maschinen_template($template){
+      global $post;
+    $chooser = sub_or_single();
+
+    if ( $chooser == "sub" ) {
+    $template = get_stylesheet_directory() . '/page-mietpark-sub.php';
+  } elseif ( $chooser == "single" ) {
+    $template = get_stylesheet_directory() . '/page-mietpark-single.php';
+  }
+      return $template;
+  }
+add_filter( 'page_template', 'maschinen_template' );
+
+function search_404() {
+      global $post;
+    $chooser = sub_or_single();
+      if (is_search()) {
+          global $wp_query;
+          $wp_query->set_404();
+          status_header(404);
+      }
+    if ( (!builder("builder", get_the_id(), false)) && (!$chooser) ) {
+          global $wp_query;
+          $wp_query->set_404();
+          status_header(404);
+  }
+  }
+add_action('wp', 'search_404');

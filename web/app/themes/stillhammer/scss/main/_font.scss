@@ -1,0 +1,81 @@
+$font-family-sans-serif: brandon-grotesque, sans-serif;
+
+body { 
+	font-family: $font-family-sans-serif; color: #000000; font-weight: 400;
+
+}
+
+b, strong {
+  font-weight: 600; }
+
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  background: 0 0;
+  color: inherit;
+  border: 0 none;
+  cursor: pointer;
+}
+
+#navtoggle { font-size: 2rem; }
+
+.no-wrap { display: inline-block; }
+
+h1 {
+	font-weight: 400;
+	font-size: 1.5em;
+	text-transform: uppercase
+}
+
+h2 {
+	font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.2em;
+	small {
+		font-size: 1rem;
+		font-weight: 300;
+		display: block;
+	}
+}
+
+h3 {
+  color: $green;
+	font-weight: 500;
+	text-transform: uppercase;
+	padding-top: 1em;
+	font-size: 1.1rem;
+	margin-bottom: .5em;
+	letter-spacing: .2em;
+	&:first-child {
+		padding-top: 0;
+	}
+	.icon-big ~ & {
+  	padding-top: 0;
+	}
+}
+
+a {
+  font-weight: 400; text-decoration: none !important; color: inherit;
+  &:hover { color: $green; }
+  }
+
+.underline {
+	@extend %underline;
+}
+
+p,h1,h2,h3,h4 { -webkit-hyphens: auto;-moz-hyphens: auto;-ms-hyphens: auto;hyphens: auto; letter-spacing: 0.5px;}
+main p, main table { line-height: 1.5; margin: 0 0 1em;}
+
+/*
+	thin		font-weight: 260;
+	extra-light font-weight: 280;
+	light		font-weight: 300;
+	regular		font-weight: 400;
+	medium		font-weight: 500;
+	SemiBold	font-weight: 600;
+	bold		font-weight: 700;
+	extrabold	font-weight: 800;
+	black		font-weight: 900;
+*/
