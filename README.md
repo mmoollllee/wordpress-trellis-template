@@ -1,33 +1,35 @@
-# [Bedrock](https://roots.io/bedrock/)
-[![Packagist](https://img.shields.io/packagist/v/roots/bedrock.svg?style=flat-square)](https://packagist.org/packages/roots/bedrock)
-[![Build Status](https://img.shields.io/travis/roots/bedrock.svg?style=flat-square)](https://travis-ci.org/roots/bedrock)
-[![Follow Roots](https://img.shields.io/twitter/follow/rootswp.svg?style=flat-square&color=1da1f2)](https://twitter.com/rootswp)
-
 ## Installation
 
-1. Clone:
+1. Clone [Trellis]()
     ```sh
-    $ mkdir example.local && cd example.local
-    $ git clone https://github.com/Mediengestalter-schw-Art/site-template.git .
+    $ mkdir domain.tld && cd domain.tld
+    $ git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git
     ```
-2. Create a new project:
+2. Install [Bedrock Site Template](https://github.com/Mediengestalter-schw-Art/site-template):
+    ```sh
+    $ git clone https://github.com/Mediengestalter-schw-Art/site-template.git site
+    $ cd site
+    $ cp .env.example .env && atom .env
+    ```
+    Edit .env, generate salts, Add ACF_PRO_KEY, Domain,...
+    Actually get's overwritten if used with Trellis.
     ```sh
     $ composer install
     ```
-3. Create a new project:
+3. Configure Local Domain in `group_vars/development/wordpress_sites.yml`
+4. Vagrant Up:
     ```sh
-    $ cp .env.example .env
-    $ atom .env
+    $ cd .. && cd trellis && vagrant up
     ```
-4. Install WP:
+5. Vagrant SSH:
     ```sh
-    $ wp core install --prompt=url --prompt=title --admin_user='mediengestalter' --prompt=admin_password --admin_email='admin@moritz-graf.de' --skip-email
+    $ vagrant ssh
+    $ cd /srv/www/example.com/current
     $ wp site switch-language de_DE
     $ wp option update blogdescription ''
-    $ wp option update ping_sites '' && wp option update default_pingback_flag false && wp option update default_pingback_flag false && wp option update default_ping_status false && wp option update default_comment_status false && wp option update show_avatars false && wp rewrite structure '/%postname%/'
+    $ wp option update ping_sites '' && wp option update default_pingback_flag false && wp option update default_pingback_flag false && wp option update default_ping_status false && wp option update default_comment_status false && wp option update show_avatars false && wp option update date_format 'j. F Y' && wp option update time_format 'G:i'
     ```
-5. Add theme(s) in `web/app/themes/` as you would for a normal WordPress site
-6. Set the document root on your webserver to Bedrock's `web` folder: `/path/to/site/web/`
+
 
 ### Updates
 
