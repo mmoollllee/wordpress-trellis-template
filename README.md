@@ -21,6 +21,11 @@
     ```sh
     $ cd .. && cd trellis && vagrant up
     ```
+    If Local `ERR_EMPTY_RESPONSE` do (see [Trellis Troubleshooting](https://roots.io/trellis/docs/troubleshooting/))
+    ```sh
+    $ SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant reload --provision
+    $ vagrant hostmanager
+    ```
 5. Vagrant SSH:
     ```sh
     $ vagrant ssh
@@ -29,6 +34,10 @@
     $ wp option update blogdescription ''
     $ wp option update ping_sites '' && wp option update default_pingback_flag false && wp option update default_pingback_flag false && wp option update default_ping_status false && wp option update default_comment_status false && wp option update show_avatars false && wp option update date_format 'j. F Y' && wp option update time_format 'G:i'
     ```
+6. Deploy with [Bedrock Deployer](https://github.com/FlorianMoser/bedrock-deployer) & [Plesk Deployer](https://github.com/FlorianMoser/plesk-deployer):
+    1. Create Plesk Environment
+    2. Edit deploy.php
+    3. Run
 
 
 ### Updates
