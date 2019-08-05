@@ -46,8 +46,8 @@ add_shortcode( 'title', 'title_shortcode' );
   Field
 */
 
-add_shortcode( 'excerpt', 'excerpt_shortcode' );
-	function excerpt_shortcode( $args, $content = null ) {
+add_shortcode( 'field', 'field_shortcode' );
+	function field_shortcode( $args, $content = null ) {
 
     $atts = array_change_key_case((array)$atts, CASE_LOWER);
 		$a = shortcode_atts([
