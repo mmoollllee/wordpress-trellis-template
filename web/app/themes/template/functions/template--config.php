@@ -32,12 +32,9 @@ font-style: normal;
     wp_enqueue_style( 'main-style', get_stylesheet_uri() );
 		wp_enqueue_style( 'theme-main', get_template_directory_uri() . '/css/main.css' );
 
-//    Gutenberg Styles Laden wenn nötig
-//		if ( 'aktuelles_cpt' === get_post_type() || is_page(596) ) { wp_enqueue_style( 'theme-gutenberg', get_template_directory_uri() . '/inc/css/gutenberg.css' ); }
-
     wp_enqueue_script('jquery');
 
-//		wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/inc/js/main.js', array('jquery'), false, true ); 
+//		wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/inc/js/main.js', array('jquery'), false, true );
 
 //		wp_enqueue_script( 'anime-script', get_template_directory_uri() . '/inc/js/anime.min.js', array('jquery'), false, true );
 
