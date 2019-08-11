@@ -1,17 +1,17 @@
 <?php
 
 	function mg_enqueue_builder() {
-		wp_enqueue_script( 'mg_arrive', get_template_directory_uri() . '/inc/builder/arrive.min.js' );
-		wp_enqueue_script( 'mg_builder_script', get_template_directory_uri() . '/inc/builder/builder.js' );
-        wp_register_style( 'mg_builder_style', get_template_directory_uri() . '/inc/builder/builder.css', false, '1.0.0' );
+		wp_enqueue_script( 'mg_arrive', get_template_directory_uri() . '/builder/arrive.min.js' );
+		wp_enqueue_script( 'mg_builder_script', get_template_directory_uri() . '/builder/builder.js' );
+        wp_register_style( 'mg_builder_style', get_template_directory_uri() . '/builder/builder.css', false, '1.0.0' );
         wp_enqueue_style( 'mg_builder_style' );
         if (current_user_can('administrator')) {
 		}
         if (!(current_user_can('administrator'))) {
-	        wp_register_style( 'mg_builder_restrict', get_template_directory_uri() . '/inc/builder/builder-restrict.css', false, '1.0.0' );
-			wp_enqueue_script( 'mg_builder_script_restrict', get_template_directory_uri() . '/inc/builder/builder-restrict.js' );
+	        wp_register_style( 'mg_builder_restrict', get_template_directory_uri() . '/builder/builder-restrict.css', false, '1.0.0' );
+			wp_enqueue_script( 'mg_builder_script_restrict', get_template_directory_uri() . '/builder/builder-restrict.js' );
         	wp_enqueue_style( 'mg_builder_restrict' );
-        } 
+        }
 	}
 add_action( 'admin_enqueue_scripts', 'mg_enqueue_builder' );
 
@@ -26,11 +26,11 @@ function builder($label = "builder", $post_id = false, $print = true) {
 
 	if( have_rows($label, $post_id) ):
 		while ( have_rows($label, $post_id) ) : the_row();
-		
+
 			$hierarchie_aktuell = get_sub_field("hierarchie");
 			if($hierarchie_aktuell <= $last_hierarchie) {
 				$i = 0;
-				while ( $hierarchie_aktuell <= $last_hierarchie) { 
+				while ( $hierarchie_aktuell <= $last_hierarchie) {
 
 					if ( $i == 1 ) {
 						$loopin = false; $loopout = false;
@@ -43,10 +43,10 @@ function builder($label = "builder", $post_id = false, $print = true) {
 					$i++;
 				}
 			}
-			$hierarchie = get_sub_field("hierarchie");  
-			
+			$hierarchie = get_sub_field("hierarchie");
+
 			$layout = explode("--", get_row_layout());
-			
+
 			require('templates/'.$layout[0].'.php' );
 
 			$last_hierarchie = $hierarchie;
@@ -57,7 +57,7 @@ function builder($label = "builder", $post_id = false, $print = true) {
 			$return .= $close[$i];
 		}
 	endif;
-	
+
 	if ($print) { print_r($return); } else { return $return; }
 
 }
