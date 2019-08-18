@@ -22,7 +22,8 @@ add_shortcode( 'email', 'wpcodex_hide_email_shortcode' );
 
 
 /*
-  Excerpt
+  Excerpt:
+	Output Wordpress Post Excerpt in the Content
 */
 
 add_shortcode( 'excerpt', 'excerpt_shortcode' );
@@ -33,7 +34,8 @@ add_shortcode( 'excerpt', 'excerpt_shortcode' );
 
 
 /*
-  Title
+  Title:
+	Output Wordpress Post Title in the content
 */
 
 add_shortcode( 'title', 'title_shortcode' );
@@ -43,20 +45,22 @@ add_shortcode( 'title', 'title_shortcode' );
 
 
 /*
-  Field
+  Field:
+	Get an ACF Field in the content
 */
 
 add_shortcode( 'field', 'field_shortcode' );
-	function field_shortcode( $args, $content = null ) {
+	function field_shortcode( $atts, $content = null ) {
 
     $atts = array_change_key_case((array)$atts, CASE_LOWER);
 		$a = shortcode_atts([
-			'name' => '',
+			'name' => '',	//name of the field
+			'id' => '',		//optional id (e.g. "options") where to get the field
     ], $atts);
 
     global $post;
 
-		return get_field($a['name'], $post->id);
+		return get_field($a['name'], ($a['id'] ? $a['id'] : $post->id ) );
 	}
 
 
