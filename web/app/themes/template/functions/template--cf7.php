@@ -9,8 +9,9 @@ remove_action( 'wp_enqueue_scripts', 'wpcf7_enqueue_styles' ); // Prevents the s
 add_filter( 'wpcf7_load_js', '__return_false' );
 add_filter( 'wpcf7_load_css', '__return_false' );
 
-
   function cf7_enqueue() {
+
+    wp_enqueue_script( 'form-script', get_template_directory_uri() . '/functions/template--cf7.js', array('jquery'), false, true );
 
 		$wpcf7 = array(
 			'apiSettings' => array(
