@@ -358,7 +358,15 @@ acf_add_local_field_group(array(
 								'class' => '',
 								'id' => '',
 							),
-							'default_value' => '<div class="col-lg-7" data-flickity=\'{ "pageDots": true, "lazyLoad": 2, "wrapAround": true, "prevNextButtons": true, "adaptiveHeight":false, "contain": true }\'>
+							'default_value' => '<div class="col-lg-7" data-flickity=\'{
+								"pageDots": true,
+								"lazyLoad": 2,
+								"wrapAround": true,
+								"adaptiveHeight":true,
+								"contain": false,
+								"autoPlay": true,
+								"prevNextButtons": false,
+}\'>
 <!--content-->
 </div>',
 							'placeholder' => '',
