@@ -64,7 +64,7 @@ task( 'deploy', [
 	'deploy:shared',
 	'deploy:writable',
 	'bedrock:vendors',
-	'push:assets',
+	//'push:assets',
 	'bedrock:env',
 	'deploy:clear_paths',
 	'deploy:symlink',
