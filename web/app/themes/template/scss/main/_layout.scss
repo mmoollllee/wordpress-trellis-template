@@ -1,37 +1,9 @@
-#header-img {
-  background-image: url('#{$template-path}/images/adobeStock_194393664.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
-  & > .container {
-    background-image: radial-gradient( rgba( 255, 255, 255, 0.9), rgba( 255, 255, 255, 0));
-  }
-}
+/*
+  Note: Bootstrap mixins
 
-.page-title {
-  font-weight: 500;
-  text-transform: uppercase;
-  color: inherit;
-  .logo {
-    height: 8em;
-    padding: .5em;
-  }
-  strong {
-    font-weight: 900;
-    font-size: 1.2em
-  }
-  .slogan {
-    height: 1.7em;
-    padding-top: .5em;
-  }
-  @include media-breakpoint-down(sm) {
-    .slogan {
-      height:2.5em;
-    }
-  }
-}
-
-
+  @include media-breakpoint-down(sm)
+  @include media-breakpoint-up(sm)
+  @include media-breakpoint-only(sm)
 
 
 img {
@@ -43,139 +15,19 @@ img {
 	z-index: 1;
 }
 
-.off-bottom-50 {
-	transform: translateY(50%);
-}
-
-.off-top-50 {
-	transform: translateY(-50%);
-	display: block;
-	z-index: 1;
-	position: relative
-}
-
-.off-top-33 {
-	margin-top: -13em;
-	display: block;
-	z-index: 1;
-	position: relative
-}
-
-.off-top-25 {
-	transform: translateY(-25%);
-	display: block;
-	z-index: 1;
-	position: relative
-}
-
-.gradient-b {
-	background-image: radial-gradient(ellipse at bottom, #e7e7e7, #fff);
-	background-size: 600%;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-}
-
 .container.row {
 	margin: auto;
 	padding: 0
 }
 
 
-
-
-
-
-
-
-
-
-
-.bggreen {
-  color: #fff;
-  background: $green;
-  a:hover { color: $yellow; }
-  h2 { color: inherit}
-  .button:hover { background: #fff; color: #000;}
+.bg-semired {
+	background: $semired;
+	// main > & { display: flex; }
+	&[class*="box"] { background-clip: content-box; }
 }
 
-.bgyellow {
-  color: #000;
-  background: $yellow;
-  .button {
-    background: $green;
-    color: #fff;
-    &:hover {
-      background: #fff;
-      color: $green;
-    }
-  }
-}
-
-
-
-
-.box {
-  padding: 1rem;
-  .inner {
-    border: 1px solid $yellow;
-    padding: 1rem;
-    height: 100%;
-    
-    i:first-of-type {
-     color: $green;
-     font-size: 4.5rem;
-    }
-    h3 { padding-top: 0}
-  }
-}
-
-@include media-breakpoint-up(xl) {
-    .box .inner {
-      padding: 2rem;
-    }
-}
-
-
-
-
-.dialog-b {
-  padding: 20px;
-  position: relative;
-  &:after {
-    top: 100%;
-  	left: 30%;
-  	border: solid transparent;
-  	content: " ";
-  	height: 0;
-  	width: 0;
-  	position: absolute;
-  	pointer-events: none;
-  	border-color: transparent;
-  	border-top-color: $green;
-  	border-width: 25px;
-  	margin-left: -25px;
-  }
-  a:hover { color: $yellow; }
-}
-
-.dialog-t {
-  position: relative;
-  margin-top: 50px;
-  &:after {
-    top: -50px;
-  	left: 30%;
-  	border: solid transparent;
-  	content: " ";
-  	height: 0;
-  	width: 0;
-  	position: absolute;
-  	pointer-events: none;
-  	border-color: transparent;
-  	border-bottom-color: $yellow;
-  	border-width: 25px;
-  	margin-left: -25px;
-  }
-  &.box {
-    padding-top: 0
-  }
+.bg-pullup {
+	margin-top: -200px;
+	padding-top: 200px;
 }

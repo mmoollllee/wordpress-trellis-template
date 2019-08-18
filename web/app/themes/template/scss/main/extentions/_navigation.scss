@@ -1,0 +1,71 @@
+.logo img {
+  max-width: 100%
+}
+
+.menu {
+  ul, ul& {
+    list-style: none;
+  }
+  & > ul, ul& {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    & > li {
+    }
+  }
+
+}
+
+
+/*
+  Slideout Stuff
+*/
+
+// Wrapper needs Backgroud-Colour to overlay menu while animating
+#wrapper {
+	position: relative;
+	z-index: 1;
+	background: #fff;
+	overflow: hidden;
+  transition: opacity .5s;
+}
+
+// Standard-Look for Overlay
+#responsivemenu {
+	padding: 4rem 2rem;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 260px;
+	min-height: 100vh;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	z-index: 0;
+	display: none;
+	ul {
+		list-style: none;
+		padding-left: 0;
+		li {
+			padding-top: .2em;
+			padding-bottom: .2em;
+			.sub-menu { padding-right: .5em; padding-bottom: .5em }
+		}
+	}
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+ overflow:hidden
+}
+
+// Content Opacity while open
+.slideout-open #wrapper > * { opacity:0.5}
+.slideout-open .slideout-menu {
+ display:block !important
+}

@@ -1,14 +1,25 @@
-[data-flickity] [class*="col"] {
-	padding: 0 !important;
-	margin: 0;
-	position: static !important
-}
-
 .flickity-enabled {
 	padding: 0;
+
+	[class*="col"] {
+		padding: 0 !important;
+		margin: 0;
+		position: static !important
+	}
+
+	figure {
+		height: 100%;
+		width: 100%;
+		img {
+	  	height: 100%;
+	  	width: 100%;
+	  	object-fit: cover;
+		}
+	}
 }
 
-.flickity-viewport {
+.flickity-viewport,
+.flickity-slider {
 	height: 100% !important;
 }
 
@@ -18,14 +29,14 @@
 }
 
 .flickity-page-dots {
-	top: inherit;
+	top: auto;
 	bottom: 1em;
 	.dot {
 	    width: .6em;
       height: .6em;
 	    margin: 0 .2em;
 	    opacity: 0.3;
-	    background: $green;
+	    background: $primary;
 	    &:only-child {
 		    display: none;
 	    }
@@ -41,7 +52,7 @@
 	height: auto;
 	border-radius: 0;
 	background: none;
-	color: $green;
+	color: $primary;
 	font-size: 2em;
 	line-height: 0;
 	padding: 0;
@@ -54,11 +65,11 @@
 	&:before {
 		@extend %icon-font-stuff;
 	}
-	&.next { 
+	&.next {
 		right: .8em;
 		&:before { content: "s" }
 	}
-	&.previous{ 
+	&.previous{
 		left: .8em;
 		&:before { content: "r" }
 	}
