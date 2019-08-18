@@ -22,38 +22,20 @@
 
 <div id="wrapper">
 
-  	<header class="splash">
-    	<div class="container py-2 pt-md-4">
-      	<div class="row justify-content-center">
-        	<div class="col col-md-10 col-xl-8 p-4">
-   					<h1 class="page-title text-center">
-							<a class="col-9 col-md-4 logo" href="<?php bloginfo( 'url' ); ?>">
-              	<img class="logo" src="<?php the_field("logo",'option') ?>" alt="<?php bloginfo( 'name' ); ?>" />
-							</a>
-            </h1>
-        	</div>
-        <div class="col-12 text-center">
-        <?php
-          if (have_rows("builder", 455)):
-            builder("builder", 455);
-          endif;
-        ?>
-        </div>
-      	</div>
-    	</div>
-  	</header>
+	<nav class="container py-1">
+  	<div class="row justify-content-between align-content-center">
+					<h1 class="col-9 col-s-7 col-md-4 col-xl-3 p-1 m-0 page-title">
+					<a class="logo" href="<?php bloginfo( 'url' ); ?>">
+          	<img class="logo" src="<?php the_field("logo",'option') ?>" alt="<?php bloginfo( 'name' ); ?>" />
+					</a>
+        </h1>
 
-<div class="bggreen d-none d-md-block">
-    <nav class="container">
-      <div class="row justify-content-center py-3">
+			<?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'd-none d-md-flex col menu', 'depth' => 0) ); ?>
 
-        <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => 'nav', 'container_class' => 'menu p-0', 'menu_class' => 'row align-items-center justify-content-end h-100 m-0 p-0', 'depth' => 0) ); ?>
+			<button id="navtoggle" class="icon-bars col-auto text-right d-md-none"></button>
 
-      </div>
-    </nav>
-</div>
-
-<button id="navtoggle" class="icon-bars col text-right d-md-none"></button>
+  	</div>
+	</nav>
 
 	<main>
 		<div id="main" class="anchor"></div>
