@@ -41,7 +41,7 @@ function adjust(elements, offset, min, max) {
 }
 
 // Apply to our element
-// adjust($('.adjust'), 10, 100, 500);
+//adjust(jQuery('.adjust'), 10, 100, 500);
 
 jQuery(window).ready(function() {
 
@@ -53,9 +53,9 @@ jQuery(window).ready(function() {
             mg_acf_hierarchie(jQuery(this));
 
             mg_acf_hide_fields(jQuery(this));
-            
+
             mg_acf_options(jQuery(this));
-            
+
 			jQuery(this).addClass("-collapsed");
 
         });
@@ -90,7 +90,7 @@ jQuery(window).ready(function() {
             mg_acf_title_insert(jQuery(this));
 
             mg_acf_hierarchie(jQuery(this));
-            
+
             mg_acf_options(jQuery(this));
 
             mg_acf_hide_fields(jQuery(this));
@@ -128,7 +128,7 @@ jQuery(window).ready(function() {
                 });
             }
         });
-        
+
     }, 0);
 });
 
@@ -149,19 +149,16 @@ function mg_acf_title_insert(e) {
         titlearea.find(".mg_acf_input_title").val(title);
     } else {
         jQuery("<div class='mg_acf_top_title_field'><input type='text' class='mg_acf_input_title adjust' value='" + title + "'></div>").insertBefore(titlearea);
-		//adjust(jQuery('.adjust'), 10, 100, 500);
-
-        //jQuery("<span class='mg_acf_title'>" + title + "</span>").insertAfter(".afc-layout-order");
-        // titlearea.find(".acf-fc-layout-order").;
-
-    }    
+    }
 
     e.find(".mg_acf_input_title").on('input', function(event) {
 
         jQuery(this).parents(".layout").find('.title input').val(jQuery(this).val());
 
+    });
 
-    })
+		adjust(jQuery('.adjust'), 10, 100, 500);
+
 }
 
 function mg_acf_options(e) {
@@ -169,19 +166,19 @@ function mg_acf_options(e) {
     e = jQuery(e);
 
 	elements = e.find('[data-name="aktiv"], [data-name="redaktionell"]');
-	
+
 	elements.each(function() {
 		value = jQuery(this).find(".acf-input [id^='acf-field']");
 		i = "data-" + jQuery(this).attr("data-name");
 
 		//e.attr(i, value.prop( "checked" ) );
-		
+
 		value.change( function() {
 			i = "data-" + jQuery(this).parents("[data-name]").attr("data-name");
 			console.log(i);
-			
+
 			jQuery(this).parents(".layout").attr(i, jQuery(this).prop( "checked" ) );
-			
+
 		}).change();
 	})
 }

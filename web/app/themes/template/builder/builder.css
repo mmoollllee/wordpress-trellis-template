@@ -36,10 +36,10 @@
 }
 
 
-.mg_acf_top_title_field { width: 50%;position: absolute;margin: 0.3em; z-index: 3; background: transparent}
+.mg_acf_top_title_field { width: auto; max-width: 70%; position: absolute;margin: 0.3em; z-index: 3; background: transparent}
 .mg_acf_top_title_field:hover input { color: #727d88 }
 .mg_acf_top_title_field:hover input:focus { color: #32373c }
-.mg_acf_top_title_field input { background: transparent}
+.mg_acf_top_title_field input.mg_acf_input_title.adjust { background: transparent; width: auto;}
 .mg_acf_top_title_field input:not(:focus) {border: 0 none;box-shadow: none;}
 
 .acf-flexible-content .layout[data-layout="loop"] { background: rgba(255, 255, 255, 0.5) }

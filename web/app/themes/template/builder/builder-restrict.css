@@ -1,9 +1,16 @@
-.layout[data-redaktionell="false"] { opacity: 0.5 }
+.layout[data-redaktionell="false"] .acf-fc-layout-controlls,
+.layout[data-redaktionell="false"] .acf-fields,
+.layout[data-redaktionell="false"] .acf-icon,
+.layout[data-redaktionell="false"] .acf-icon-copy,
+.layout[data-redaktionell="false"] .acf-icon-clone
+{ display: none !important}
 
-.layout[data-redaktionell="false"] .acf-fc-layout-controlls, .layout[data-redaktionell="false"] .acf-fields { display: none !important}
+.layout[data-redaktionell="false"]>.acf-fc-layout-handle {
+  border-bottom-width: 0 !important;
+  color: #fff !important;
+  cursor: auto !important;
+}
 
-.layout[data-redaktionell="false"], .mg_acf_top_title_field { pointer-events: none; }
-
-[data-name="redaktionell"], [data-name="code"], [data-name="close"], [data-name="aktiv"], [data-name="classes"], [data-name="lazyload"], [data-name="verlinken"], [data-name="imagesize"] { display: none !important}
+[data-name="redaktionell"], [data-name="code"], [data-name="close"], [data-name="classes"], [data-name="lazyload"], [data-name="verlinken"], [data-name="imagesize"] { display: none !important}
 
 .acf-fc-layout-handle { cursor: pointer }
