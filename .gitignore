@@ -1,5 +1,6 @@
 # Application
 web/app/plugins/*/
+site/web/app/mu-plugins/*/
 web/app/upgrade
 web/app/uploads/*/
 web/app/languages
@@ -7,7 +8,6 @@ web/app/themes/*/css
 
 # WordPress
 web/wp
-web/.htaccess
 
 # Logs
 *.log

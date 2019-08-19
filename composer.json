@@ -67,6 +67,7 @@
     "wpackagist-plugin/simple-taxonomy-ordering": "^2.0",
     "wpackagist-plugin/antivirus": "^1.3",
     "wpackagist-plugin/save-with-keyboard": "^3.0.2",
+    "wpackagist-plugin/simple-history":"^2.31.1",
     "mmoollllee/bedrock-deployer": "dev-master"
   },
   "require-dev": {
@@ -77,7 +78,7 @@
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "advanced-custom-fields/advanced-custom-fields-pro", "wpackagist-plugin/wp-scss", "wpackagist-plugin/duplicate-post", "wpackagist-plugin/save-with-keyboard", "wpackagist-plugin/simple-taxonomy-ordering", "wpackagist-plugin/simple-page-ordering", "wpackagist-plugin/resmushit-image-optimizer"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },

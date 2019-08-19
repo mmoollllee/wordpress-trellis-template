@@ -14,6 +14,10 @@
 	<meta name="description" content="<?php echo $description ?>" />
 	<meta name="keywords" content="<?php echo $meta ?>" />
 
+	<!--noptimize-->
+	<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
+	<!--/noptimize-->
+
 <?php wp_head(); ?>
 
 </head>
