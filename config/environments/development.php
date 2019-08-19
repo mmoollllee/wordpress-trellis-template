@@ -16,3 +16,11 @@ ini_set('display_errors', 1);
 
 // Enable plugin and theme updates and installation from the admin
 Config::define('DISALLOW_FILE_MODS', false);
+
+define('DEV_DISABLED_PLUGINS', serialize([
+    'autoptimize/autoptimize.php',
+    'wp-super-cache/wp-cache.php',
+    'google-sitemap-generator/sitemap-core.php',
+    'redirection/redirection.php',
+    'wp-statistics/wp-statistics.php'
+]));

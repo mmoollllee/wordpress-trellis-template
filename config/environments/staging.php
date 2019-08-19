@@ -13,3 +13,13 @@ use Roots\WPConfig\Config;
  * Example: `Config::define('WP_DEBUG', true);`
  * Example: `Config::define('DISALLOW_FILE_MODS', false);`
  */
+
+Config::define('WP_DEBUG', true);
+Config::define('WPCACHEHOME', getenv('WPCACHEHOME'));
+Config::define('WP_CACHE', true);
+
+define('DEV_DISABLED_PLUGINS', serialize([
+    'google-sitemap-generator/sitemap-core.php',
+    'redirection/redirection.php',
+    'wp-statistics/wp-statistics.php'
+]));

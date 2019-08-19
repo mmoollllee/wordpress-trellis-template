@@ -102,6 +102,8 @@ Config::define('DISALLOW_FILE_MODS', true);
 Config::define('WP_DEBUG_DISPLAY', false);
 Config::define('SCRIPT_DEBUG', false);
 Config::define('WP_SCSS_ALWAYS_RECOMPILE', false);
+Config::define('WPCACHEHOME', getenv('WPCACHEHOME'));
+Config::define('WP_CACHE', true);
 ini_set('display_errors', 0);
 
 /**

@@ -3,14 +3,14 @@
 namespace Deployer;
 
 require 'vendor/deployer/deployer/recipe/common.php';
-require 'vendor/florianmoser/plesk-deployer/recipe/chroot_fixes.php';
-require 'vendor/florianmoser/bedrock-deployer/recipe/bedrock_db.php';
-require 'vendor/florianmoser/bedrock-deployer/recipe/bedrock_env.php';
-require 'vendor/florianmoser/bedrock-deployer/recipe/bedrock_misc.php';
-require 'vendor/florianmoser/bedrock-deployer/recipe/common.php';
-require 'vendor/florianmoser/bedrock-deployer/recipe/filetransfer.php';
-require 'vendor/florianmoser/bedrock-deployer/recipe/sage.php';
-require 'vendor/florianmoser/bedrock-deployer/recipe/trellis.php';
+require 'vendor/mmoollllee/plesk-deployer/recipe/chroot_fixes.php';
+require 'vendor/mmoollllee/bedrock-deployer/recipe/bedrock_db.php';
+require 'vendor/mmoollllee/bedrock-deployer/recipe/bedrock_env.php';
+require 'vendor/mmoollllee/bedrock-deployer/recipe/bedrock_misc.php';
+require 'vendor/mmoollllee/bedrock-deployer/recipe/common.php';
+require 'vendor/mmoollllee/bedrock-deployer/recipe/filetransfer.php';
+require 'vendor/mmoollllee/bedrock-deployer/recipe/sage.php';
+require 'vendor/mmoollllee/bedrock-deployer/recipe/trellis.php';
 
 // Configuration
 
@@ -28,6 +28,7 @@ set( 'vagrant_root', '/srv/www/example.com/current' );
 
 // Bedrock DB and Sage config
 set( 'local_root', dirname( __FILE__ ) );;
+set( 'theme_path', 'web/app/themes/template' );
 
 // File transfer config
 set( 'sync_dirs', [
@@ -63,9 +64,8 @@ task( 'deploy', [
 	'trellis:remove',
 	'deploy:shared',
 	'deploy:writable',
-	'bedrock:vendors',
-	//'push:assets',
 	'bedrock:env',
+	'bedrock:vendors',
 	'deploy:clear_paths',
 	'deploy:symlink',
   'push:db',
