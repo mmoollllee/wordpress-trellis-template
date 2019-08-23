@@ -5,9 +5,9 @@
     $ mkdir domain.tld && cd domain.tld
     $ git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git
     ```
-2. Install [Bedrock Site Template](https://github.com/Mediengestalter-schw-Art/site-template):
+2. Install [Bedrock Site Template](https://github.com/mmoollllee/site-template):
     ```sh
-    $ git clone https://github.com/Mediengestalter-schw-Art/site-template.git site
+    $ git clone https://github.com/mmoollllee/site-template.git site
     $ cd site
     $ cp .env.example .env && atom .env
     ```
