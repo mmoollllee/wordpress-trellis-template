@@ -7,17 +7,23 @@
     ```
 2. Install [Bedrock Site Template](https://github.com/mmoollllee/site-template):
     ```sh
-    $ git clone https://github.com/mmoollllee/site-template.git site
+    $ git clone https://github.com/mmoollllee/site-template.git site  && rm -rf site/.git
     $ cd site
     $ cp .env.example .env && atom .env
     ```
     Edit .env, generate salts, Add ACF_PRO_KEY, Domain,...
-    Actually get's overwritten if used with Trellis.
+    Actually get's overwritten if used with Trellis, but maybe we need it for ACF_PRO_KEY to run Composer Install. Edit composer.json for needed packages now.
     ```sh
     $ composer install
     ```
-3. Configure Local Domain in `group_vars/development/wordpress_sites.yml`
-4. Vagrant Up:
+3. Create Readme File with a "Log"
+4. Configure Local Domain in `trellis/group_vars/development/wordpress_sites.yml` and add following
+    ```
+    site_title: Example
+    admin_user: example
+    ```
+5. Configure Local Domain in `trellis/group_vars/development/vault.yml`
+6. Vagrant Up:
     ```sh
     $ cd .. && cd trellis && vagrant up
     ```
@@ -26,15 +32,15 @@
     $ SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant reload --provision
     $ vagrant hostmanager
     ```
-5. Vagrant SSH:
+7. Vagrant SSH:
     ```sh
     $ vagrant ssh
     $ cd /srv/www/example.com/current
-    $ wp site switch-language de_DE
+    $ wp language core install de_DE && wp site switch-language de_DE
     $ wp option update blogdescription ''
-    $ wp option update ping_sites '' && wp option update default_pingback_flag false && wp option update default_pingback_flag false && wp option update default_ping_status false && wp option update default_comment_status false && wp option update show_avatars false && wp option update date_format 'j. F Y' && wp option update time_format 'G:i'
+    $ wp option update ping_sites '' && wp option update default_pingback_flag false && wp option update default_pingback_flag false && wp option update default_ping_status false && wp option update default_comment_status false && wp option update show_avatars false && wp option update date_format 'j. F Y' && wp option update time_format 'G:i' && wp option update timezone_string Europe/Berlin && wp option delete ping_sites
     ```
-6. Deploy with [Bedrock Deployer](https://github.com/FlorianMoser/bedrock-deployer):
+8. Deploy with [Bedrock Deployer](https://github.com/FlorianMoser/bedrock-deployer):
     1. Create Plesk Environment
     2. Edit deploy.php
     3. Run
@@ -81,7 +87,7 @@ Keep track of development and community news.
 
 ## ToDo
 
-* How to define the different .env files? Is it .env.local,...?
+* [Trellis Deployment Workflow](https://github.com/hamedb89/trellis-db-push-and-pull) [Docs](https://roots.io/trellis/docs/deploys/)
 * [Disable Gutenberg by Code](https://digwp.com/2018/12/enable-gutenberg-block-editor/)
 * Write own file-renaming-on-upload Plugin
 * Add other Plugins too?
