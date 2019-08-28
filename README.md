@@ -7,12 +7,11 @@
     ```
 2. Install [Bedrock Site Template](https://github.com/mmoollllee/site-template):
     ```sh
-    $ git clone https://github.com/mmoollllee/site-template.git site  && rm -rf site/.git
-    $ cd site
+    $ git clone https://github.com/mmoollllee/site-template.git site  && cd site && rm -rf .git
     $ cp .env.example .env && atom .env
     ```
-    Edit .env, generate salts, Add ACF_PRO_KEY, Domain,...
-    Actually get's overwritten if used with Trellis, but maybe we need it for ACF_PRO_KEY to run Composer Install. Edit composer.json for needed packages now.
+    Edit .env
+    Actually get's overwritten if used with Trellis, but we need it for ACF_PRO_KEY to run Composer Install. Edit composer.json for needed packages now.
     ```sh
     $ composer install
     ```
@@ -25,7 +24,7 @@
 5. Configure Local Domain in `trellis/group_vars/development/vault.yml`
 6. Vagrant Up:
     ```sh
-    $ cd .. && cd trellis && vagrant up
+    $ cd ../trellis && vagrant up
     ```
     If Local `ERR_EMPTY_RESPONSE` do (see [Trellis Troubleshooting](https://roots.io/trellis/docs/troubleshooting/))
     ```sh
@@ -38,12 +37,17 @@
     $ cd /srv/www/example.com/current
     $ wp language core install de_DE && wp site switch-language de_DE
     $ wp option update blogdescription ''
-    $ wp option update ping_sites '' && wp option update default_pingback_flag false && wp option update default_pingback_flag false && wp option update default_ping_status false && wp option update default_comment_status false && wp option update show_avatars false && wp option update date_format 'j. F Y' && wp option update time_format 'G:i' && wp option update timezone_string Europe/Berlin && wp option delete ping_sites
+    $ wp option delete ping_sites && wp option update default_pingback_flag false && wp option update default_pingback_flag false && wp option update default_ping_status false && wp option update default_comment_status false && wp option update show_avatars false && wp option update date_format 'j. F Y' && wp option update time_format 'G:i' && wp option update timezone_string Europe/Berlin
     ```
-8. Deploy with [Bedrock Deployer](https://github.com/FlorianMoser/bedrock-deployer):
-    1. Create Plesk Environment
-    2. Edit deploy.php
-    3. Run
+8. Deploy with [Bedrock Deployer](https://github.com/mmoollllee/bedrock-deployer):
+    1. Create GitHub Repo
+    2. Setup Plesk Environment
+    3. Edit deploy.php
+    4. Run
+    ```sh
+    $ dep deploy (production)
+    $ dep pull (production)
+    ```
 
 
 ### Updates
@@ -90,6 +94,7 @@ Keep track of development and community news.
 * [Trellis Deployment Workflow](https://github.com/hamedb89/trellis-db-push-and-pull) [Docs](https://roots.io/trellis/docs/deploys/)
 * [Disable Gutenberg by Code](https://digwp.com/2018/12/enable-gutenberg-block-editor/)
 * Write own file-renaming-on-upload Plugin
+* data-src lazyloading [https://github.com/verlok/lazyload](https://github.com/verlok/lazyload)
 * Add other Plugins too?
   * Better Search Replace
   * Code Snippets

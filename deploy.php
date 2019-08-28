@@ -16,15 +16,13 @@ require 'vendor/mmoollllee/bedrock-deployer/recipe/trellis.php';
 
 // Common Deployer config
 set( 'repository', 'git@github.org/vendor/repository.git' );
-set( 'chroot_path_prefix', '/var/www/vhosts/example.com/stage.example.com/deploy' );
-set( 'chroot_index_file', 'web/index.php' );
 set( 'shared_dirs', [
 	'web/app/uploads'
 ] );
 
 // Bedrock DB config
 set( 'vagrant_dir', dirname( __FILE__ ) . '/../trellis' );
-set( 'vagrant_root', '/srv/www/example.com/current' );
+set( 'vagrant_root', '/srv/www/example.com/httpdocs/deploy/current' );
 
 // Bedrock DB and Sage config
 set( 'local_root', dirname( __FILE__ ) );;
@@ -43,7 +41,7 @@ set( 'default_stage', 'staging' );
 host( 'your-host.com/staging' )
 	->stage( 'staging' )
 	->user( 'your-username' )
-	->set( 'deploy_path', '/staging.domain.com/deploy' );
+	->set( 'deploy_path', '~/stage.domain.com/deploy' );
 
 host( 'your-host.com/production' )
 	->stage( 'production' )
@@ -55,8 +53,28 @@ host( 'your-host.com/production' )
 
 // Deployment flow
 // ToDo adapt sage:vendors...
-desc( 'Deploy your project' );
+desc( 'Deploy whole project' );
 task( 'deploy', [
+	'deploy:prepare',
+	'deploy:lock',
+	'deploy:release',
+	'deploy:update_code',
+	'trellis:remove',
+	'deploy:shared',
+	'deploy:writable',
+	'deploy:symlink',
+	'bedrock:env',
+	'bedrock:vendors',
+	'deploy:clear_paths',
+  'push:db',
+	'push:files',
+	'deploy:unlock',
+	'cleanup',
+	'success',
+] );
+
+desc( 'Deploy only app' );
+task( 'push', [
 	'deploy:prepare',
 	'deploy:lock',
 	'deploy:release',
@@ -68,10 +86,14 @@ task( 'deploy', [
 	'bedrock:vendors',
 	'deploy:clear_paths',
 	'deploy:symlink',
-  'push:db',
 	'deploy:unlock',
 	'cleanup',
 	'success',
+] );
+
+task( 'pull', [
+  'pull:db',
+	'pull:files',
 ] );
 
 // [Optional] if deploy fails automatically unlock.
