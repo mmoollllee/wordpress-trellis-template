@@ -94,7 +94,6 @@ Keep track of development and community news.
 * [Trellis Deployment Workflow](https://github.com/hamedb89/trellis-db-push-and-pull) [Docs](https://roots.io/trellis/docs/deploys/)
 * [Disable Gutenberg by Code](https://digwp.com/2018/12/enable-gutenberg-block-editor/)
 * Write own file-renaming-on-upload Plugin
-* data-src lazyloading [https://github.com/verlok/lazyload](https://github.com/verlok/lazyload)
 * Add other Plugins too?
   * Better Search Replace
   * Code Snippets

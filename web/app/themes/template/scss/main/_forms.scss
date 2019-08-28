@@ -49,10 +49,7 @@ input[type="checkbox"] { margin: 0 .5rem}
 textarea { min-height: 200px }
 
 [aria-invalid="true"],
-.wpcf7-not-valid {
-	border-color: red !important
-	border-style: dashed;
-}
+.wpcf7-not-valid {border-color: $red !important; border-style: dashed;}
 
 .screen-reader-response {
   margin-top: 1rem;

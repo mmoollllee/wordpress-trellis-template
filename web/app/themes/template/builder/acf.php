@@ -362,6 +362,7 @@ acf_add_local_field_group(array(
 								"pageDots": true,
 								"lazyLoad": 2,
 								"wrapAround": true,
+								"prevNextButtons": true,
 								"adaptiveHeight":true,
 								"contain": false,
 								"autoPlay": true,

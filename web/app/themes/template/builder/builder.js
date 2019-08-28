@@ -149,6 +149,10 @@ function mg_acf_title_insert(e) {
         titlearea.find(".mg_acf_input_title").val(title);
     } else {
         jQuery("<div class='mg_acf_top_title_field'><input type='text' class='mg_acf_input_title adjust' value='" + title + "'></div>").insertBefore(titlearea);
+
+        //jQuery("<span class='mg_acf_title'>" + title + "</span>").insertAfter(".afc-layout-order");
+        // titlearea.find(".acf-fc-layout-order").;
+
     }
 
     e.find(".mg_acf_input_title").on('input', function(event) {
