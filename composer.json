@@ -75,6 +75,7 @@
     "wpackagist-plugin/simple-history":"^2.31.1",
     "wpackagist-plugin/jquery-updater":"^3.4.1.1",
     "wpackagist-plugin/duplicate-menu":"^0.2.1",
+    "wpackagist-plugin/crazy-lazy":"^1.0.4",
     "mmoollllee/bedrock-deployer": "dev-master"
   },
   "require-dev": {
