@@ -22,7 +22,7 @@ set( 'shared_dirs', [
 
 // Bedrock DB config
 set( 'vagrant_dir', dirname( __FILE__ ) . '/../trellis' );
-set( 'vagrant_root', '/srv/www/example.com/httpdocs/deploy/current' );
+set( 'vagrant_root', '/srv/www/example.com/current' );
 
 // Bedrock DB and Sage config
 set( 'local_root', dirname( __FILE__ ) );;
@@ -38,15 +38,16 @@ set( 'sync_dirs', [
 
 set( 'default_stage', 'staging' );
 
-host( 'your-host.com/staging' )
+host( 'stage.your-host.com' )
 	->stage( 'staging' )
 	->user( 'your-username' )
 	->set( 'deploy_path', '~/stage.domain.com/deploy' );
+// Set Webspace-Path to stage.example.com/deploy/current/web/
 
-host( 'your-host.com/production' )
+host( 'your-host.com' )
 	->stage( 'production' )
 	->user( 'your-username' )
-	->set( 'deploy_path', '/domain.com/deploy' );
+	->set( 'deploy_path', '/httpdocs/deploy' );
 
 
 // Tasks
