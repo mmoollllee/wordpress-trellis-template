@@ -24,6 +24,7 @@ define('DISABLED_PLUGINS', serialize([
     'google-sitemap-generator/sitemap.php',
     'redirection/redirection.php',
     'simple-history/index.php',
+    'wp-fail2ban-logging/wp-fail2ban-logging.php',
     'wp-statistics/wp-statistics.php'
 ]));
 
