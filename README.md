@@ -41,11 +41,18 @@
     ```
 8. Deploy with [Bedrock Deployer](https://github.com/mmoollllee/bedrock-deployer):
     1. Create GitHub Repo
-    2. Setup Plesk Environment
-    3. Edit deploy.php
-    4. Run
+    2. Setup Plesk Environment (bin/bash, add SSH-Key)
+    3. SSH into Webserver, create SSH key and add pub key to [GitHub Repo Deploy Keys](https://github.com/mmoollllee/site-template/settings/keys)
+    ```sh
+    $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+    4. Edit deploy.php
+    5. Change Admin PW
+    6. Run
     ```sh
     $ dep deploy (production)
+    ```
+    7. Make changes on stage and ...
+    ```sh
     $ dep pull (production)
     ```
 

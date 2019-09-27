@@ -3,7 +3,7 @@
 namespace Deployer;
 
 require 'vendor/deployer/deployer/recipe/common.php';
-require 'vendor/mmoollllee/plesk-deployer/recipe/chroot_fixes.php';
+require 'vendor/mmoollllee/bedrock-deployer/recipe/prepare.php';
 require 'vendor/mmoollllee/bedrock-deployer/recipe/bedrock_db.php';
 require 'vendor/mmoollllee/bedrock-deployer/recipe/bedrock_env.php';
 require 'vendor/mmoollllee/bedrock-deployer/recipe/bedrock_misc.php';
@@ -13,9 +13,10 @@ require 'vendor/mmoollllee/bedrock-deployer/recipe/sage.php';
 require 'vendor/mmoollllee/bedrock-deployer/recipe/trellis.php';
 
 // Configuration
+set('bin/composer', function () { return 'composer'; });
 
 // Common Deployer config
-set( 'repository', 'git@github.org/vendor/repository.git' );
+set( 'repository', 'git@github.com:vendor/example.com.git' );
 set( 'shared_dirs', [
 	'web/app/uploads'
 ] );
@@ -41,13 +42,13 @@ set( 'default_stage', 'staging' );
 host( 'stage.your-host.com' )
 	->stage( 'staging' )
 	->user( 'your-username' )
-	->set( 'deploy_path', '~/stage.domain.com/deploy' );
+	->set( 'deploy_path', '~/stage/deploy' );
 // Set Webspace-Path to stage.example.com/deploy/current/web/
 
 host( 'your-host.com' )
 	->stage( 'production' )
 	->user( 'your-username' )
-	->set( 'deploy_path', '/httpdocs/deploy' );
+	->set( 'deploy_path', '/production/deploy' );
 
 
 // Tasks
@@ -56,7 +57,7 @@ host( 'your-host.com' )
 // ToDo adapt sage:vendors...
 desc( 'Deploy whole project' );
 task( 'deploy', [
-	'deploy:prepare',
+	'bedrock:prepare',
 	'deploy:lock',
 	'deploy:release',
 	'deploy:update_code',
@@ -76,7 +77,7 @@ task( 'deploy', [
 
 desc( 'Deploy only app' );
 task( 'push', [
-	'deploy:prepare',
+	'bedrock:prepare',
 	'deploy:lock',
 	'deploy:release',
 	'deploy:update_code',
