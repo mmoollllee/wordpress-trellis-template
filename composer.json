@@ -76,7 +76,7 @@
     "wpackagist-plugin/jquery-updater":"^3.4.1.1",
     "wpackagist-plugin/duplicate-menu":"^0.2.1",
     "wpackagist-plugin/crazy-lazy":"^1.0.4",
-    "wpackagist-plugin/wp-fail2ban-logging":"^1.0.0",
+    "wpackagist-plugin/rename-wp-login":"^2.6",
     "mmoollllee/bedrock-deployer": "dev-master"
   },
   "require-dev": {
@@ -87,7 +87,7 @@
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "advanced-custom-fields/advanced-custom-fields-pro", "wpackagist-plugin/acf-code-field", "wpackagist-plugin/duplicate-post", "wpackagist-plugin/save-with-keyboard", "wpackagist-plugin/simple-taxonomy-ordering", "wpackagist-plugin/simple-page-ordering", "wpackagist-plugin/jquery-updater", "wpackagist-plugin/duplicate-menu", "wpackagist-plugin/wp-fail2ban-logging"],
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "advanced-custom-fields/advanced-custom-fields-pro", "wpackagist-plugin/acf-code-field", "wpackagist-plugin/duplicate-post", "wpackagist-plugin/save-with-keyboard", "wpackagist-plugin/simple-taxonomy-ordering", "wpackagist-plugin/simple-page-ordering", "wpackagist-plugin/jquery-updater", "wpackagist-plugin/duplicate-menu"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
