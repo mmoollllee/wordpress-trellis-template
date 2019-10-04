@@ -31,6 +31,7 @@
     $ SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant reload --provision
     $ vagrant hostmanager
     ```
+    For NFS Catalina fix edit '/etc/exports' and add '/System/Volumes/Data/'
 7. Vagrant SSH:
     ```sh
     $ vagrant ssh
