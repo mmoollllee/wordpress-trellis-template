@@ -77,7 +77,6 @@
     "wpackagist-plugin/duplicate-menu":"^0.2.1",
     "wpackagist-plugin/crazy-lazy":"^1.0.4",
     "wpackagist-plugin/rename-wp-login":"^2.6",
-    "wpackagist-plugin/wordfence":"^7.4",
     "mmoollllee/bedrock-deployer": "dev-master"
   },
   "require-dev": {
