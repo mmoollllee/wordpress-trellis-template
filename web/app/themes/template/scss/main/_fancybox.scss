@@ -1,3 +1,7 @@
 .fancybox-image[src$=".png"] {
 	background-color: #fff !important;
 }
+
+.fancybox-video.d-none {
+	display: block !important;
+}
