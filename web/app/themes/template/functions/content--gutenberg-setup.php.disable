@@ -3,7 +3,7 @@
   function mg_gutenberg_setup() {
     add_theme_support( 'align-wide' );
   }
-add_action( 'after_setup_theme', 'mg_gutenberg_setup' );
+// add_action( 'after_setup_theme', 'mg_gutenberg_setup' );
 
   function mg_acf_blocks() {
     // check function exists
@@ -25,7 +25,7 @@ add_action( 'after_setup_theme', 'mg_gutenberg_setup' );
       ));
     }
   }
-add_action('acf/init', 'mg_acf_blocks');
+// add_action('acf/init', 'mg_acf_blocks');
 
 function mg_acf_blocks_render_callback( $block ) {
   $slug = str_replace('acf/', '', $block['name']);
@@ -35,6 +35,14 @@ function mg_acf_blocks_render_callback( $block ) {
   }
 }
 
+add_action( 'admin_enqueue_scripts', function() {
+  wp_enqueue_style( 'theme-gutenberg', get_template_directory_uri() . '/css/gutenberg.css' );
+} );
 
 //    Gutenberg Styles Laden wenn nötig
-//		if ( 'aktuelles_cpt' === get_post_type() || is_page(596) ) { wp_enqueue_style( 'theme-gutenberg', get_template_directory_uri() . '/inc/css/gutenberg.css' ); }
+  function gutenberg_enqueue() {
+    // if ( 'produkte' === get_post_type() ) { 
+      wp_enqueue_style( 'theme-gutenberg', get_template_directory_uri() . '/css/gutenberg.css' ); 
+    // }
+  }
+add_action( 'wp_enqueue_scripts', 'gutenberg_enqueue' );

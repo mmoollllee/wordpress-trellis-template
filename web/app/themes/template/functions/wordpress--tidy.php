@@ -1,5 +1,12 @@
 <?php
 
+	/*
+	 	No Password-Mail
+	*/
+
+add_filter( 'send_password_change_email', '__return_false' );
+
+
   /*
     Adminbar ausmachen
   */
