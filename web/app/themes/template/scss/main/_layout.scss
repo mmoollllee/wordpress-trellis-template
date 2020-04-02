@@ -4,7 +4,7 @@
   @include media-breakpoint-down(sm)
   @include media-breakpoint-up(sm)
   @include media-breakpoint-only(sm)
-
+*/
 
 img {
 	max-width: 100%;
@@ -15,7 +15,8 @@ img {
 	z-index: 1;
 }
 
-.container.row {
+.container.row,
+.container-fluid.row { {
 	margin: auto;
 	padding: 0
 }

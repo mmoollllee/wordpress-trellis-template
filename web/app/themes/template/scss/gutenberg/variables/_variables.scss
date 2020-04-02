@@ -32,8 +32,8 @@ $shadow-below-only: 0 5px 10px rgba( $dark-gray-900, .1 ), 0 2px 2px rgba( $dark
 
 // Editor Widths
 $sidebar-width: 280px;
-$text-editor-max-width: 760px;	// @todo: merge with variable below
-$content-width: 636px;	// @todo: leverage theme $content_width variable
+$text-editor-max-width: 992px;	// @todo: merge with variable below
+$content-width: 850px;	// @todo: leverage theme $content_width variable
 
 // Block UI
 $block-controls-height: 36px;

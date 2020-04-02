@@ -2,6 +2,8 @@
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 
+@import "main/variables";
+
 @import "main/mixins/position";
 @import "main/mixins/appearance";
 
@@ -10,12 +12,12 @@
 @import "main/utilities/cover";
 @import "main/utilities/multi-columns";
 @import "main/utilities/overflow";
+@import "main/utilities/font";
 
+@import "main/extentions/iframe-privacy";
 @import "main/extentions/font";
 @import "main/extentions/layout";
 @import "main/extentions/navigation";
-
-@import "main/variables";
 
 @import "main/font";
 @import "main/fontspace";
@@ -31,3 +33,4 @@
 @import "main/flickity";
 @import "main/tooltip";
 @import "main/fancybox";
+@import "main/table";
