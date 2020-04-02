@@ -97,6 +97,12 @@ jQuery(window).ready(function() {
 
         });
 
+        jQuery(".block-editor-block-list__layout").arrive(".acf-builder-title .values .layout", function() {
+            mg_acf_title_insert(jQuery(this));
+
+            mg_acf_hide_fields(jQuery(this));
+        });
+
 
         jQuery(".ui-sortable").on("sortstart", function(event, ui) {
 

@@ -1,585 +1,214 @@
 <?php
+/**
+ * This builds the whole ACF Fields for the Builder
+ * File get's called from theme/functions.php
+ */
 
-if( function_exists('acf_add_local_field_group') ):
+/**
+ * Optionen für alle Page-Builder "Layouts"
+ */
 
-acf_add_local_field_group(array(
-	'key' => 'group_5735a0760204d',
-	'title' => 'Builder',
-	'fields' => array(
-		array(
-			'key' => 'field_5735a093d371e',
-			'label' => 'Builder',
-			'name' => 'builder',
-			'type' => 'flexible_content',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => 'acf-pagebuilder',
-			),
-			'layouts' => array(
-				'59b28edbd383a' => array(
-					'key' => '59b28edbd383a',
-					'name' => 'html',
-					'label' => 'Content',
-					'display' => 'block',
-					'sub_fields' => array(
-						array(
-							'key' => 'field_5a7afe6e0fa62_field_5a7afd4048467',
-							'label' => 'Hierarchie',
-							'name' => 'hierarchie',
-							'type' => 'number',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '',
-								'class' => 'hierarchie',
-								'id' => '',
-							),
-							'default_value' => 0,
-							'placeholder' => '',
-							'prepend' => '',
-							'append' => '',
-							'min' => '',
-							'max' => '',
-							'step' => '',
-							'_clone' => 'field_5a7afe6e0fa62',
-							'__key' => 'field_5a7afd4048467',
-							'__name' => 'hierarchie',
-							'__label' => 'Hierarchie',
-						),
-						array(
-							'key' => 'field_5a7afe6e0fa62_field_5c1ccf194218f',
-							'label' => 'Redaktionell',
-							'name' => 'redaktionell',
-							'type' => 'true_false',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '25',
-								'class' => '',
-								'id' => '',
-							),
-							'message' => 'Redaktioneller Inhalt',
-							'default_value' => 1,
-							'ui' => 0,
-							'ui_on_text' => '',
-							'ui_off_text' => '',
-							'_clone' => 'field_5a7afe6e0fa62',
-							'__key' => 'field_5c1ccf194218f',
-							'__name' => 'redaktionell',
-							'__label' => 'Redaktionell',
-						),
-						array(
-							'key' => 'field_5a7afe6e0fa62_field_5c1ccf3742190',
-							'label' => 'Aktiv',
-							'name' => 'aktiv',
-							'type' => 'true_false',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '25',
-								'class' => '',
-								'id' => '',
-							),
-							'message' => 'Aktiv',
-							'default_value' => 1,
-							'ui' => 0,
-							'ui_on_text' => '',
-							'ui_off_text' => '',
-							'_clone' => 'field_5a7afe6e0fa62',
-							'__key' => 'field_5c1ccf3742190',
-							'__name' => 'aktiv',
-							'__label' => 'Aktiv',
-						),
-						array(
-							'key' => 'field_5c1cd4a1f3a22',
-							'label' => 'Titel',
-							'name' => 'title',
-							'type' => 'text',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '',
-								'class' => 'title',
-								'id' => '',
-							),
-							'default_value' => 'Inhaltsbereich',
-							'placeholder' => '',
-							'prepend' => '',
-							'append' => '',
-							'maxlength' => '',
-						),
-						array(
-							'key' => 'field_59ba9bac08c32',
-							'label' => 'HTML',
-							'name' => 'code',
-							'type' => 'acf_code_field',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'default_value' => '<section class="container">
-	<div class="row">
-		<div class="col-12">
-	<!--content-->
-		</div>
-	</div>
-</section>',
-							'placeholder' => '',
-							'mode' => 'htmlmixed',
-							'theme' => 'monokai',
-						),
-						array(
-							'key' => 'field_59c126779aca5',
-							'label' => 'Content',
-							'name' => 'content',
-							'type' => 'wysiwyg',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'default_value' => '',
-							'tabs' => 'all',
-							'toolbar' => 'full',
-							'media_upload' => 1,
-							'delay' => 0,
-						),
-					),
-					'min' => '',
-					'max' => '',
-				),
-				'59cb8e6c9f0a1' => array(
-					'key' => '59cb8e6c9f0a1',
-					'name' => 'bilder',
-					'label' => 'Bilder',
-					'display' => 'block',
-					'sub_fields' => array(
-						array(
-							'key' => 'field_5c1ccf616da7f_field_5a7afe6e0fa62_field_5c1ccf194218f',
-							'label' => 'Redaktionell',
-							'name' => 'redaktionell',
-							'type' => 'true_false',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '25',
-								'class' => '',
-								'id' => '',
-							),
-							'message' => 'Redaktioneller Inhalt',
-							'default_value' => 1,
-							'ui' => 0,
-							'ui_on_text' => '',
-							'ui_off_text' => '',
-							'_clone' => 'field_5c1ccf616da7f',
-							'__key' => 'field_5c1ccf194218f',
-							'__name' => 'redaktionell',
-							'__label' => 'Redaktionell',
-						),
-						array(
-							'key' => 'field_5c1ccf616da7f_field_5a7afe6e0fa62_field_5c1ccf3742190',
-							'label' => 'Aktiv',
-							'name' => 'aktiv',
-							'type' => 'true_false',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '25',
-								'class' => '',
-								'id' => '',
-							),
-							'message' => 'Aktiv',
-							'default_value' => 1,
-							'ui' => 0,
-							'ui_on_text' => '',
-							'ui_off_text' => '',
-							'_clone' => 'field_5c1ccf616da7f',
-							'__key' => 'field_5c1ccf3742190',
-							'__name' => 'aktiv',
-							'__label' => 'Aktiv',
-						),
-						array(
-							'key' => 'field_5c1c14560ac6d',
-							'label' => 'Klassen',
-							'name' => 'classes',
-							'type' => 'text',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '20',
-								'class' => '',
-								'id' => '',
-							),
-							'default_value' => '',
-							'placeholder' => '',
-							'prepend' => '',
-							'append' => '',
-							'maxlength' => '',
-						),
-						array(
-							'key' => 'field_59cb8fa8afbdf',
-							'label' => 'Verlinken',
-							'name' => 'verlinken',
-							'type' => 'true_false',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '20',
-								'class' => '',
-								'id' => '',
-							),
-							'message' => 'Verlinken',
-							'default_value' => 1,
-							'ui' => 0,
-							'ui_on_text' => '',
-							'ui_off_text' => '',
-						),
-						array(
-							'key' => 'field_5c59754fb856d',
-							'label' => 'Lazyload',
-							'name' => 'lazyload',
-							'type' => 'true_false',
-							'instructions' => 'Benötigt Flickityeinstellung "lazyLoad": true',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '15',
-								'class' => '',
-								'id' => '',
-							),
-							'message' => 'Lazyload',
-							'default_value' => 1,
-							'ui' => 0,
-							'ui_on_text' => '',
-							'ui_off_text' => '',
-						),
-						array(
-							'key' => 'field_59cb8fb5afbe0',
-							'label' => 'Bildgröße',
-							'name' => 'imagesize',
-							'type' => 'select',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '20',
-								'class' => '',
-								'id' => '',
-							),
-							'choices' => array(
-								'thumbnail' => 'thumbnail (400x400)',
-								'medium' => 'medium (600x0)',
-								'medium_large' => 'medium_large (900x0)',
-								'large' => 'large (1800x0)',
-								'post-thumbnail' => 'post-thumbnail (400x400)',
-							),
-							'default_value' => array(
-							),
-							'allow_null' => 0,
-							'multiple' => 0,
-							'ui' => 0,
-							'return_format' => 'value',
-							'ajax' => 0,
-							'placeholder' => '',
-						),
-						array(
-							'key' => 'field_5c1ccf616da7f_field_5a7afe6e0fa62_field_5a7afd4048467',
-							'label' => 'Hierarchie',
-							'name' => 'hierarchie',
-							'type' => 'number',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '',
-								'class' => 'hierarchie',
-								'id' => '',
-							),
-							'default_value' => 0,
-							'placeholder' => '',
-							'prepend' => '',
-							'append' => '',
-							'min' => '',
-							'max' => '',
-							'step' => '',
-							'_clone' => 'field_5c1ccf616da7f',
-							'__key' => 'field_5a7afd4048467',
-							'__name' => 'hierarchie',
-							'__label' => 'Hierarchie',
-						),
-						array(
-							'key' => 'field_5c1cd50137ff5',
-							'label' => 'Titel',
-							'name' => 'title',
-							'type' => 'text',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '',
-								'class' => 'title',
-								'id' => '',
-							),
-							'default_value' => 'Bilder',
-							'placeholder' => '',
-							'prepend' => '',
-							'append' => '',
-							'maxlength' => '',
-						),
-						array(
-							'key' => 'field_59cb8e6c9f0a4',
-							'label' => 'HTML',
-							'name' => 'code',
-							'type' => 'acf_code_field',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'default_value' => '<div class="col-lg-7" data-flickity=\'{
-								"pageDots": true,
-								"lazyLoad": 2,
-								"wrapAround": true,
-								"prevNextButtons": true,
-								"adaptiveHeight":true,
-								"contain": false,
-								"autoPlay": true,
-								"prevNextButtons": false,
-}\'>
-<!--content-->
-</div>',
-							'placeholder' => '',
-							'mode' => 'htmlmixed',
-							'theme' => 'monokai',
-						),
-						array(
-							'key' => 'field_59cb8e6c9f0a5',
-							'label' => 'Bilder',
-							'name' => 'bilder',
-							'type' => 'gallery',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'min' => '',
-							'max' => '',
-							'insert' => 'append',
-							'library' => 'all',
-							'min_width' => '',
-							'min_height' => '',
-							'min_size' => '',
-							'max_width' => '',
-							'max_height' => '',
-							'max_size' => '',
-							'mime_types' => '',
-							'return_format' => 'array',
-							'preview_size' => 'medium',
-						),
-					),
-					'min' => '',
-					'max' => '',
-				),
-				'5a855d7c037d2' => array(
-					'key' => '5a855d7c037d2',
-					'name' => 'element',
-					'label' => 'Element',
-					'display' => 'block',
-					'sub_fields' => array(
-						array(
-							'key' => 'field_5c1ccf8a6da80_field_5a7afe6e0fa62_field_5c1ccf194218f',
-							'label' => 'Redaktionell',
-							'name' => 'redaktionell',
-							'type' => 'true_false',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '25',
-								'class' => '',
-								'id' => '',
-							),
-							'message' => 'Redaktioneller Inhalt',
-							'default_value' => 1,
-							'ui' => 0,
-							'ui_on_text' => '',
-							'ui_off_text' => '',
-							'_clone' => 'field_5c1ccf8a6da80',
-							'__key' => 'field_5c1ccf194218f',
-							'__name' => 'redaktionell',
-							'__label' => 'Redaktionell',
-						),
-						array(
-							'key' => 'field_5c1ccf8a6da80_field_5a7afe6e0fa62_field_5c1ccf3742190',
-							'label' => 'Aktiv',
-							'name' => 'aktiv',
-							'type' => 'true_false',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '25',
-								'class' => '',
-								'id' => '',
-							),
-							'message' => 'Aktiv',
-							'default_value' => 1,
-							'ui' => 0,
-							'ui_on_text' => '',
-							'ui_off_text' => '',
-							'_clone' => 'field_5c1ccf8a6da80',
-							'__key' => 'field_5c1ccf3742190',
-							'__name' => 'aktiv',
-							'__label' => 'Aktiv',
-						),
-						array(
-							'key' => 'field_5c1cd51637ff6',
-							'label' => 'Titel',
-							'name' => 'title',
-							'type' => 'text',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '',
-								'class' => 'title',
-								'id' => '',
-							),
-							'default_value' => 'Element',
-							'placeholder' => '',
-							'prepend' => '',
-							'append' => '',
-							'maxlength' => '',
-						),
-						array(
-							'key' => 'field_5bc5e2e1e3b3a',
-							'label' => 'Element',
-							'name' => 'elements',
-							'type' => 'select',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'choices' => array(
-								'kontaktbox' => '"Sie haben noch Fragen?"-Element',
-								'aktuelles-full' => '"Aktuelles-Bereich" einblenden',
-								'ansprechpartner-suche' => '"Ansprechpartner-Suche" einblenden',
-								'messen3' => '"3 Messen" einblenden',
-								'naechstemesse' => '"Nächste Messe" einblenden',
-								'aktuellethemenwelt' => '"Aktuelle Themenwelt" einblenden',
-								'aktuellesangebot' => '"Aktuelles Angebot" einblenden',
-								'newsletterbox' => '"Newsletterbox" einblenden',
-								'aktuellesfooter' => '"Aktuelles-Fußbereich" einblenden',
-								'apkarte' => '"Ansprechpartner-Karte" einblenden',
-							),
-							'default_value' => array(
-							),
-							'allow_null' => 0,
-							'multiple' => 1,
-							'ui' => 1,
-							'ajax' => 0,
-							'return_format' => 'value',
-							'placeholder' => '',
-						),
-						array(
-							'key' => 'field_5c1ccf8a6da80_field_5a7afe6e0fa62_field_5a7afd4048467',
-							'label' => 'Hierarchie',
-							'name' => 'hierarchie',
-							'type' => 'number',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '',
-								'class' => 'hierarchie',
-								'id' => '',
-							),
-							'default_value' => 0,
-							'placeholder' => '',
-							'prepend' => '',
-							'append' => '',
-							'min' => '',
-							'max' => '',
-							'step' => '',
-							'_clone' => 'field_5c1ccf8a6da80',
-							'__key' => 'field_5a7afd4048467',
-							'__name' => 'hierarchie',
-							'__label' => 'Hierarchie',
-						),
-					),
-					'min' => '',
-					'max' => '',
-				),
-			),
-			'button_label' => 'Eintrag hinzufügen',
-			'min' => '',
-			'max' => '',
-		),
-	),
-	'location' => array(
-		array(
-			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'page',
-			),
-		),
-		array(
-			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'post',
-			),
-		),
-		array(
-			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'post',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'acf_after_title',
-	'style' => 'seamless',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => array(
-		0 => 'the_content',
-	),
-	'active' => true,
-	'description' => '',
-));
+$options = new StoutLogic\AcfBuilder\FieldsBuilder('options');
+$options
+		->addNumber('hierarchie', [
+				'label' => 'Hierarchie',
+				'wrapper' => array( 'class' => 'hierarchie' ),
+				'default_value' => 0,
+		])
+		->addTrueFalse('aktiv', [
+				'label' => 'Aktiv',
+				'message' => 'Aktiv',
+				'wrapper' => array( 'width' => '20' ),
+				'default_value' => 1
+		])
+		->addTrueFalse('redaktionell', [
+				'label' => 'Redaktionell',
+				'message' => 'Redaktioneller Inhalt',
+				'wrapper' => array( 'width' => '20' ),
+				'default_value' => 1
+		])
+		->addText('title', [
+				'label' => 'Titel',
+				'message' => 'Redaktioneller Inhalt',
+				'wrapper' => array( 'class' => 'title' ),
+				'default_value' => 'Titel'
+		]);
 
-endif;
 
-?>
+	/*
+		Standard-Content-Feld
+	*/
+
+$content = new StoutLogic\AcfBuilder\FieldsBuilder('content');
+$content
+		->addFields($options)
+		->addField('code', 'acf_code_field', [
+				'label' => 'HTML',
+				'placeholder' => '',
+				'default_value' =>
+				'<section class="container">
+						<div class="row">
+								<div class="col-12">
+										<!--content-->
+								</div>
+						</div>
+				</section>'
+		])
+		->addWysiwyg('content', [
+				'label' => 'Inhalt',
+				'tabs' => 'all',
+				'toolbar' => 'full',
+				'media_upload' => 1
+		]);
+
+
+	/*
+		Galerie-Feld
+	*/
+
+$galerie = new StoutLogic\AcfBuilder\FieldsBuilder('galerie');
+$galerie
+		->addFields($options)
+		->addField('code', 'acf_code_field', [
+				'label' => 'HTML',
+				'placeholder' => '',
+				'default_value' =>
+				'<div class="col-lg-7" data-flickity=\'{
+						"pageDots": true,
+						"lazyLoad": 2,
+						"wrapAround": true,
+						"prevNextButtons": true,
+						"adaptiveHeight":true,
+						"contain": false,
+						"autoPlay": true,
+						"prevNextButtons": false
+				}\'>
+						<!--content-->
+				</div>'
+		])
+		->addText('classes', [
+				'label' => 'Klassen',
+				'wrapper' => array( 'width' => '15' )
+		])
+		->addTrueFalse('verlinken', [
+				'label' => 'Verlinken',
+				'message' => 'Verlinken',
+				'wrapper' => array( 'width' => '15' ),
+				'default_value' => 1
+		])
+		->addTrueFalse('lazyload', [
+				'label' => 'Lazyload',
+				'message' => 'Lazyload',
+				'wrapper' => array( 'width' => '15' ),
+				'default_value' => 1
+		])
+		->addSelect('imagesize', [
+				'label' => 'Bildgröße',
+				'wrapper' => array( 'width' => '15' ),
+				'choices' => array(
+					'thumbnail' => 'thumbnail (400x400)',
+					'medium' => 'medium (600x0)',
+					'medium_large' => 'medium_large (900x0)',
+					'large' => 'large (1800x0)'
+				)
+		])
+		->addGallery('bilder', [
+				'label' => 'Bilder'
+		]);
+
+
+	/*
+		Element
+	*/
+
+$element = new StoutLogic\AcfBuilder\FieldsBuilder('element');
+$element
+		->addFields($options)
+		->addField('code', 'acf_code_field', [
+				'label' => 'HTML',
+				'placeholder' => '',
+				'default_value' => '<!--content-->'
+		])
+		->addWysiwyg('content', [
+				'label' => 'Inhalt',
+				'tabs' => 'all',
+				'toolbar' => 'full',
+				'media_upload' => 1
+		])
+		->addSelect('elements', [
+				'label' => 'Elementauswahl',
+				'multiple' => 1,
+				'ui' => 1
+		]);
+
+
+	/*
+		Ansprechpartner
+	*/
+
+$ansprechpartner = new StoutLogic\AcfBuilder\FieldsBuilder('ansprechpartner');
+$ansprechpartner
+		->addFields($options)
+		->addField('code', 'acf_code_field', [
+				'label' => 'HTML',
+				'placeholder' => '',
+				'default_value' => '<!--content-->'
+		])
+		->addRelationship('ansprechpartner', [
+				'label' => 'Ansprechpartner',
+				'post_type' => array( 0 => 'ansprechpartner' ),
+				'taxonomy' => '',
+				'filters' => array( 0 => 'search' ),
+				'return_format' => 'id'
+		]);
+
+
+	/*
+		Builder
+	*/
+
+$builder = new StoutLogic\AcfBuilder\FieldsBuilder('builder', [
+    'title' => 'Builder',
+    'style' => 'seamless',
+		'position' => 'acf_after_title',
+		'hide_on_screen' => array( 0 => 'the_content' ),
+]);
+$builder
+		->addFlexibleContent('builder', [
+				'label' => 'Builder',
+				'button_label' => 'Eintrag hinzufügen',
+				'wrapper' => array( 'id' => 'acf-pagebuilder' ),
+		])
+
+
+				->addLayout('html', [
+						'label' => 'Inhaltsfeld'
+				])
+						->addFields($content)
+
+
+				->addLayout('bilder', [
+						'label' => 'Bilder'
+				])
+						->addFields($galerie)
+
+
+				->addLayout('element', [
+						'label' => 'Element'
+				])
+						->addFields($element)
+
+
+				->addLayout('ansprechpartner', [
+						'label' => 'Ansprechpartner'
+				])
+						->addFields($ansprechpartner)
+
+
+		->setLocation('post_type', '==', 'page')
+			->or('post_type', '==', 'post')
+			->or('post_type', '==', 'elemente');
+
+add_action('acf/init', function() use ($builder) {
+   acf_add_local_field_group($builder->build());
+});

@@ -15,16 +15,23 @@
 add_action( 'admin_enqueue_scripts', 'mg_enqueue_builder' );
 
 
-function builder($label = "builder", $post_id = false, $print = true) {
-	$post_id = apply_filters('acf/get_post_id', $post_id );
+function builder($args) {
+	$defaults = array (
+		"label" => "builder",
+		"post_id" => false,
+		"print" => true
+	);
+	$args = wp_parse_args( $args, $defaults );
+
+	$post_id = apply_filters('acf/get_post_id', $args['post_id'] );
 	$return = "";
 	$hierarchie = 0;
 	$last_hierarchie = -1;
 	$close = array();
 	$loopin = false; $loopout = false;
 
-	if( have_rows($label, $post_id) ):
-		while ( have_rows($label, $post_id) ) : the_row();
+	if( have_rows($args['label'], $args['post_id']) ):
+		while ( have_rows($args['label'], $args['post_id']) ) : the_row();
 
 			$hierarchie_aktuell = get_sub_field("hierarchie");
 			if($hierarchie_aktuell <= $last_hierarchie) {
@@ -57,7 +64,7 @@ function builder($label = "builder", $post_id = false, $print = true) {
 		}
 	endif;
 
-	if ($print) { print_r($return); } else { return $return; }
+	if ($args['print']) { print_r($return); } else { return $return; }
 
 }
 
