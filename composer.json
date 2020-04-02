@@ -17,7 +17,7 @@
     },
     {
       "name": "Moritz Graf",
-      "email": "info@moritz-graf.de",
+      "email": "mg@moritz-graf.de",
       "homepage": "https://github.com/mmoollllee"
     }
   ],
@@ -50,11 +50,12 @@
     "composer/installers": "^1.4",
     "vlucas/phpdotenv": "^3.4.0",
     "oscarotero/env": "^1.2.0",
-    "roots/wordpress": "5.2.3",
+    "roots/wordpress": "5.4",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/wp-scss": "^1.2",
     "advanced-custom-fields/advanced-custom-fields-pro": "^5.8",
+    "stoutlogic/acf-builder": "1.8.0",
     "wpackagist-plugin/acf-flexible-layouts-manager": "^1.1",
     "wpackagist-plugin/post-2-post-for-acf": "^1.4",
     "wpackagist-plugin/acf-code-field": "^1.8",
@@ -65,7 +66,7 @@
     "wpackagist-plugin/duplicate-post": "^3.2",
     "wpackagist-plugin/google-sitemap-generator": "^4.1",
     "wpackagist-plugin/redirection": "^4.3",
-    "wpackagist-plugin/resmushit-image-optimizer": "^0.1.22",
+    "wpackagist-plugin/resmushit-image-optimizer": "^0.2.4",
     "wpackagist-plugin/simple-page-ordering": "^2.3",
     "wpackagist-plugin/wp-statistics": "^12.6",
     "wpackagist-plugin/wp-super-cache": "^1.6",
@@ -76,8 +77,11 @@
     "wpackagist-plugin/jquery-updater":"^3.4.1.1",
     "wpackagist-plugin/duplicate-menu":"^0.2.1",
     "wpackagist-plugin/crazy-lazy":"^1.0.4",
+    "wpackagist-plugin/wp-fail2ban-logging":"^1.0.0",
     "wpackagist-plugin/rename-wp-login":"^2.6",
     "wpackagist-plugin/wordfence":"^7.4",
+    "wpackagist-plugin/regenerate-thumbnails": "^3.1",
+    "wpackagist-plugin/better-search-replace": "^1.3.3",
     "mmoollllee/bedrock-deployer": "dev-master"
   },
   "require-dev": {
