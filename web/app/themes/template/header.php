@@ -18,7 +18,9 @@
 	<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
 	<!--/noptimize-->
 
-<?php wp_head(); ?>
+	<?php wp_head(); ?>
+
+	<?php the_field('head'); ?>
 
 </head>
 

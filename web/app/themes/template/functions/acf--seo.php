@@ -67,6 +67,29 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
+		array (
+			'key' => 'field_58cfad10ff9a3',
+			'label' => 'Head',
+			'name' => 'head',
+			'type' => 'acf_code_field',
+			'instructions' => 'Code für den Head-Bereich',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+			'mode' => 'htmlmixed',
+			'theme' => 'monokai',
+		)
 	),
 	'location' => array (
 		array (
