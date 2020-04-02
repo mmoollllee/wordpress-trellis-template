@@ -35,11 +35,7 @@
 7. Vagrant SSH:
     ```sh
     $ vagrant ssh
-    $ cd /srv/www/example.com/current
-    $ wp language core install de_DE && wp site switch-language de_DE
-    $ wp option update blogdescription ''
-    $ wp option delete ping_sites && wp option update default_pingback_flag false && wp option update default_pingback_flag false && wp option update default_ping_status false && wp option update default_comment_status false && wp option update show_avatars false && wp option update date_format 'j. F Y' && wp option update time_format 'G:i' && wp option update timezone_string Europe/Berlin
-    ```
+    $ sh /srv/www/example.com/current/scripts/wp-reset-options.sh
 8. Deploy with [Bedrock Deployer](https://github.com/mmoollllee/bedrock-deployer):
     1. Create GitHub Repo
     2. Setup Plesk Environment (bin/bash, add SSH-Key)
@@ -100,11 +96,7 @@ Keep track of development and community news.
 ## ToDo
 
 * [Trellis Deployment Workflow](https://github.com/hamedb89/trellis-db-push-and-pull) [Docs](https://roots.io/trellis/docs/deploys/)
-* [Disable Gutenberg by Code](https://digwp.com/2018/12/enable-gutenberg-block-editor/)
 * Write own file-renaming-on-upload Plugin
 * Add other Plugins too?
-  * Better Search Replace
-  * Code Snippets
-  * Duplicator
   * Mail project
   * Relevanssi

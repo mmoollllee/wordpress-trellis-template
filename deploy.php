@@ -48,7 +48,7 @@ host( 'stage.your-host.com' )
 host( 'your-host.com' )
 	->stage( 'production' )
 	->user( 'your-username' )
-	->set( 'deploy_path', '/production/deploy' );
+	->set( 'deploy_path', '~/httpdocs/deploy' );
 
 
 // Tasks
@@ -67,6 +67,7 @@ task( 'deploy', [
 	'deploy:symlink',
 	'bedrock:env',
 	'bedrock:vendors',
+	'bedrock:wp-scss',
 	'deploy:clear_paths',
   'push:db',
 	'push:files',
@@ -86,6 +87,7 @@ task( 'push', [
 	'deploy:writable',
 	'bedrock:env',
 	'bedrock:vendors',
+	'bedrock:wp-scss',
 	'deploy:clear_paths',
 	'deploy:symlink',
 	'deploy:unlock',

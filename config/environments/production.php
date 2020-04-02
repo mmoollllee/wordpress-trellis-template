@@ -5,9 +5,12 @@
 
 use Roots\WPConfig\Config;
 
-define('DISABLED_PLUGINS', false );
+define('DISABLED_PLUGINS', serialize([
+    'better-search-replace/better-search-replace.php'
+]));
 
 define('ENABLED_PLUGINS', serialize([
+    'wp-scss/wp-scss.php',
     'autoptimize/autoptimize.php',
     'wp-super-cache/wp-cache.php',
     'google-sitemap-generator/sitemap.php',
