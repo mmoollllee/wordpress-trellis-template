@@ -27,7 +27,7 @@ function register_my_cpts() {
     "rewrite" => array( "slug" => "aktuelles", "with_front" => true ),
     "query_var" => true,
     "menu_position" => 5,
-    "menu_icon" => "dashicons-megaphone",
+    "menu_icon" => "dashicons-megaphone", // https://developer.wordpress.org/resource/dashicons/
     "supports" => array( "title", "editor", "revisions" )
   );
 
