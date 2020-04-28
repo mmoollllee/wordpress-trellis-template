@@ -82,6 +82,7 @@
     "wpackagist-plugin/wordfence":"^7.4",
     "wpackagist-plugin/regenerate-thumbnails": "^3.1",
     "wpackagist-plugin/better-search-replace": "^1.3.3",
+    "wpackagist-plugin/wp-nested-pages": "^3.1.8",
     "mmoollllee/bedrock-deployer": "dev-master"
   },
   "require-dev": {
