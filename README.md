@@ -8,7 +8,7 @@
 2. Install [Bedrock Site Template](https://github.com/mmoollllee/site-template):
     ```sh
     $ git clone https://github.com/mmoollllee/site-template.git site  && cd site && rm -rf .git
-    $ cp .env.example .env && atom .env
+    $ cp .env.example .env && code .env
     ```
     Edit .env
     Actually get's overwritten if used with Trellis, but we need it for ACF_PRO_KEY to run Composer Install. Edit composer.json for needed packages now.
