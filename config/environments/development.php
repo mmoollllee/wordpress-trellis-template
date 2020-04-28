@@ -13,7 +13,7 @@ Config::define('SCRIPT_DEBUG', true);
 Config::define('WP_SCSS_ALWAYS_RECOMPILE', true);
 Config::define('WP_CACHE', false);
 
-ini_set('display_errors', 1);
+ini_set('display_errors', '1');
 
 // Enable plugin and theme updates and installation from the admin
 Config::define('DISALLOW_FILE_MODS', false);
