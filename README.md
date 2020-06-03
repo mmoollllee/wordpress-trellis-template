@@ -1,47 +1,39 @@
 ## Installation
 
-1. Clone [Trellis]()
+1. Clone Repository with [Trellis](https://github.com/roots/trellis/)-Subtree
     ```sh
-    $ mkdir domain.tld && cd domain.tld
-    $ git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git
+    $ git clone git@github.com:mmoollllee/wordpress-trellis-template.git domain.tld && cd domain.tld
     ```
-2. Install [Bedrock Site Template](https://github.com/mmoollllee/site-template):
+2. Setup .env
     ```sh
-    $ git clone https://github.com/mmoollllee/site-template.git site  && cd site && rm -rf .git
-    $ cp .env.example .env && code .env
+    $ cd site && cp .env.example .env && code .env
     ```
-    Edit .env
-    Actually get's overwritten if used with Trellis, but we need it for ACF_PRO_KEY to run Composer Install. Edit composer.json for needed packages now.
+    Actually get's overwritten with `vagrant up`, but we need the inital ACF_PRO_KEY to run Composer Install.
     ```sh
     $ composer install
     ```
-3. Create Readme File with a "Log"
-4. Configure Local Domain in `trellis/group_vars/development/wordpress_sites.yml` and add following
-    ```
+3. Configure Local Domain in `trellis/group_vars/development/wordpress_sites.yml` and add following
+    ```yml
     site_title: Example
     admin_user: example
     ```
-5. Configure Local Domain in `trellis/group_vars/development/vault.yml`
-6. Vagrant Up:
+4. Configure Local Domain in `trellis/group_vars/development/vault.yml`
+5. Vagrant Up:
     ```sh
     $ cd ../trellis && vagrant up
     ```
-    If Local `ERR_EMPTY_RESPONSE` do (see [Trellis Troubleshooting](https://roots.io/trellis/docs/troubleshooting/))
-    ```sh
-    $ SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant reload --provision
-    $ vagrant hostmanager
-    ```
-    For NFS Catalina fix edit '/etc/exports' and add '/System/Volumes/Data/'
-7. Vagrant SSH:
+6. Vagrant SSH:
     ```sh
     $ vagrant ssh
-    $ sh /srv/www/example.com/current/scripts/wp-reset-options.sh
-8. Deploy with [Bedrock Deployer](https://github.com/mmoollllee/bedrock-deployer):
+    $ sh /srv/www/domain.tld/current/scripts/wp-reset-options.sh
+    ```
+7. Deploy with [Bedrock Deployer](https://github.com/mmoollllee/bedrock-deployer):
     1. Create GitHub Repo
     2. Setup Plesk Environment (bin/bash, add SSH-Key)
     3. SSH into Webserver, create SSH key and add pub key to [GitHub Repo Deploy Keys](https://github.com/mmoollllee/site-template/settings/keys)
     ```sh
-    $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+    $ ssh-keygen -t rsa -b 4096
+    ```
     4. Edit deploy.php
     5. Change Admin PW
     6. Run
@@ -65,6 +57,11 @@ To update Wordpress:
 Update Plugins:
     ```sh
     $ composer update
+    ```
+
+Update Trellis:
+    ```sh
+    $ git subtree pull --prefix trellis https://github.com/roots/trellis.git master --squash
     ```
 
 ## Documentation
